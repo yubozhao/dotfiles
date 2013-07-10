@@ -87,6 +87,7 @@ export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
+export PACKAGE_DIRS="/Users/yubozhao/codes/eventedmind/packages"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -102,3 +103,5 @@ alias sl='ls'
 alias tmp='cd /tmp'
 alias l='ls -la'
 alias dh='df -h'
+alias tmuxxx='tmux attach-session -t'
+alias tmuxkill='tmux kill-session -t'
