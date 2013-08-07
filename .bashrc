@@ -92,7 +92,7 @@ export GIT_PS1_SHOWUPSTREAM="git verbose"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+export PATH="/opt/local/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PACKAGE_DIRS="/Users/yubozhao/code/eventedmind/packages"
