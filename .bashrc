@@ -69,9 +69,9 @@ PROMPT_COMMAND='export ERR=$?'
 
 
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#  . `brew --prefix`/etc/bash_completion
+#fi
 
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
