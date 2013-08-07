@@ -72,14 +72,19 @@ PROMPT_COMMAND='export ERR=$?'
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 #  . `brew --prefix`/etc/bash_completion
 #fi
-if [ -f ~/dotfiles/bash_completion.d/git-completion.bash ]; then
-   . ~/dotfiles/bash_completion.d/git-completion.bash
-fi
 
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
 function code() {
   cd ~/code/$1;
+}
+
+function emacsapp() {
+  open /Applications/emacs.app $1;
+}
+
+function devmeteor() {
+  ~/code/meteor/meteor/meteor $1;
 }
 
 export GIT_PS1_DESCRIBE_STYLE=branch
