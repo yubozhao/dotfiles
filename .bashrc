@@ -76,15 +76,16 @@ PROMPT_COMMAND='export ERR=$?'
 [[ $TERM == "screen" ]] && export -p TERM="screen-256color"
 
 function code() {
-  cd ~/code/$1;
+  cd ~/src/$1;
 }
 
 function emacsapp() {
   open /Applications/emacs.app $1;
 }
 
+#Run meteor from local repo
 function devmeteor() {
-  ~/code/meteor/meteor/meteor $1;
+  ~/src/meteor/meteor/meteor $1;
 }
 
 export GIT_PS1_DESCRIBE_STYLE=branch
@@ -95,7 +96,9 @@ export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
-export PACKAGE_DIRS="/Users/yubz86/code/eventedmind/packages"
+export PACKAGE_DIRS="/Users/yubz86/src/meteor-packages"
+export METEOR_SOURCE="/Users/yubz86/src/meteor"
+export APP_NAME="/Users/yubz86/src/eventedmind/emind-web-v2"
 
 alias ..='cd ..'
 alias ...='cd ../..'
