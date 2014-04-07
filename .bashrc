@@ -85,7 +85,7 @@ function emacsapp() {
 
 #Run meteor from local repo
 function devmeteor() {
-  ~/src/meteor/meteor/meteor $1;
+  ~/src/meteor/meteor $1;
 }
 
 export GIT_PS1_DESCRIBE_STYLE=branch
@@ -98,7 +98,7 @@ export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PACKAGE_DIRS="/Users/yubz86/src/meteor-packages"
 export METEOR_SOURCE="/Users/yubz86/src/meteor"
-export APP_NAME="/Users/yubz86/src/eventedmind/emind-web-v2"
+export APP_NAME="/Users/yubz86/src/emind"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -109,10 +109,10 @@ alias fgrep='grep -F'
 alias ls='ls -FG'
 alias m='less'
 alias md='mkdir'
-alias p='pstree -p'
 alias sl='ls'
 alias tmp='cd /tmp'
 alias l='ls -la'
 alias dh='df -h'
 alias tmuxxx='tmux attach-session -t'
 alias tmuxkill='tmux kill-session -t'
+alias nnMac="pmset sleepnow"

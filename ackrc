@@ -9,10 +9,12 @@
 
 # Always color, even if piping to a another program
 --color
+--sort-file
+--smart-case
 
 --ignore-dir=.idea/
---ignore-dir=.meteor
---ignore-dir=.build
+--ignore-dir=.meteor/
+--ignore-dir=.build/
 --ignore-file=match:.gitignore
 
 #make sure ack knows how to search common filetypes used in rails projects
