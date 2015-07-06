@@ -49,3 +49,25 @@ bind - split-window -v
 
 # use C-b v to paste the tmux buffer
 bind v paste-buffer
+
+# show pomo a gem utlity for pomodoro
+set-option -g status-right '#(cat ~/.pomo_stat)'
+
+# List of plugins
+# Supports `github_username/repo` or full git URLs
+set -g @tpm_plugins "              \
+  tmux-plugins/tpm                 \
+  tmux-plugins/tmux-sensible       \
+  tmux-plugins/tmux-resurrect      \
+  tmux-plugins/tmux-yank      \
+"
+# Other examples:
+# github_username/plugin_name    \
+# git@github.com/user/plugin     \
+# git@bitbucket.com/user/plugin  \
+
+# initializes TMUX plugin manager
+run-shell ~/.tmux/plugins/tpm/tpm
+
+#for copy and paste
+set-option -g default-command "reattach-to-user-namespace -l zsh"
