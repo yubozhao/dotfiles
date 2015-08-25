@@ -69,5 +69,5 @@ set -g @tpm_plugins "              \
 # initializes TMUX plugin manager
 run-shell ~/.tmux/plugins/tpm/tpm
 
-#for copy and paste
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+# use zsh instead of bash
+#set-option -g default-command "reattach-to-user-namespace -l zsh"
