@@ -93,15 +93,16 @@ export GIT_PS1_SHOWUPSTREAM="git verbose"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 
-#export PACKAGE_DIRS="/Users/yubz86/src/meteor-packages"
-export METEOR_SOURCE="/Users/yubz86/src/meteor"
-#export APP_NAME="/Users/yubz86/src/emind"
-export ANDROID_HOME="/Users/yubz86/.meteor/android_bundle/android-sdk"
+#export PACKAGE_DIRS="/Users/bozhaoyu/src/meteor-packages"
+export METEOR_SOURCE="/Users/bozhaoyu/src/meteor"
+#export APP_NAME="/Users/bozhaoyu/src/emind"
+#export ANDROID_HOME="/Users/bozhaoyu/.meteor/android_bundle/android-sdk"
 
 export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -119,9 +120,14 @@ alias dh='df -h'
 alias tmuxxx='tmux attach-session -t'
 alias tmuxkill='tmux kill-session -t'
 alias nnMac="pmset sleepnow"
-alias pomostart="pomo start --progress --tmux"
 alias lineCount="git ls-files | xargs wc -l"
 
 #THE FUCK
 alias fuck='$(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
+
+export NVM_DIR="/Users/bozhaoyu/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+PATH="$PATH:/Users/bozhaoyu/src/scrap/flow/"
