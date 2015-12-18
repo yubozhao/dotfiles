@@ -79,6 +79,13 @@ function code() {
   cd ~/src/$1;
 }
 
+function workcms() {
+  cd ~/Development/Projects/Evil_Trunk/Development/Trunk/Tools/NewsfeedCMS/Source
+}
+function workdash() {
+  cd ~/Development/Projects/Evil_Trunk/Development/Trunk/Tools/Dashboard
+}
+
 function emacsapp() {
   open /Applications/emacs.app $1;
 }
