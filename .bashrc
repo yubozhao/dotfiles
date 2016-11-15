@@ -79,37 +79,24 @@ function code() {
   cd ~/src/$1;
 }
 
-function workcms() {
-  cd ~/Development/Projects/Evil_Trunk/Development/Trunk/Tools/NewsfeedCMS/Source
-}
-function workdash() {
-  cd ~/Development/Projects/Evil_Trunk/Development/Trunk/Tools/Dashboard
-}
-
 function emacsapp() {
   open /Applications/emacs.app $1;
 }
 
-#Run meteor from local repo
-function devmeteor() {
-  ~/src/meteor/meteor $1;
-}
 
 export GIT_PS1_DESCRIBE_STYLE=branch
 export GIT_PS1_SHOWUPSTREAM="git verbose"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 
-#export PACKAGE_DIRS="/Users/bozhaoyu/src/meteor-packages"
-export METEOR_SOURCE="/Users/bozhaoyu/src/meteor"
-#export APP_NAME="/Users/bozhaoyu/src/emind"
-#export ANDROID_HOME="/Users/bozhaoyu/.meteor/android_bundle/android-sdk"
+
 
 export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+export PATH="$PATH:$HOME/.yarn/bin"
 
 alias ..='cd ..'
 alias ...='cd ../..'
