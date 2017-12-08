@@ -79,10 +79,9 @@ function code() {
   cd ~/src/$1;
 }
 
-function emacsapp() {
-  open /Applications/emacs.app $1;
+function vim() {
+  nvim $1;
 }
-
 
 export GIT_PS1_DESCRIBE_STYLE=branch
 export GIT_PS1_SHOWUPSTREAM="git verbose"
@@ -90,13 +89,24 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="${BRIGHT_CYAN}\w${GREEN}\$(__git_ps1 ' (%s)') \$ ${RESET}"
 
 
-
-export PATH="/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+export PATH="/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_152)
 export PATH="$PATH:$HOME/.yarn/bin"
+
+
+# Go path
+export GOPATH=$HOME/src/go # don't forget to change your path correctly!
+export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
+
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOBIN/bin
+
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -111,17 +121,19 @@ alias sl='ls'
 alias tmp='cd /tmp'
 alias l='ls -la'
 alias dh='df -h'
-alias tmuxxx='tmux attach-session -t'
-alias tmuxkill='tmux kill-session -t'
-alias nnMac="pmset sleepnow"
-alias lineCount="git ls-files | xargs wc -l"
 
-#THE FUCK
-alias fuck='$(thefuck $(fc -ln -1))'
-alias FUCK='fuck'
-
-export NVM_DIR="/Users/bozhaoyu/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+## npm list global and local
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias nl="npm list --depth=0 2>/dev/null"
 
 
-PATH="$PATH:/Users/bozhaoyu/src/scrap/flow/"
+# powerline
+# function _update_ps1() {
+#     PS1="$(powerline-shell $?)"
+# }
+
+# if [ "$TERM" != "linux" ]; then
+#     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# fi
+# export POWERLINE_CONFIG_COMMAND="/usr/local/bin/powerline-config"
+# export POWERLINE_COMMAND=powerline
