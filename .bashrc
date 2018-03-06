@@ -5,6 +5,10 @@ fi
 . ~/bash_completion.d/git-prompt.sh
 . ~/bash_completion.d/git-completion.bash
 
+if [ -f ~/bash_completion.d/hub-completion.bash ]; then
+  . ~/bash_completion.d/hub-completion.bash
+fi
+
 DULL=0
 BRIGHT=1
 
@@ -94,7 +98,7 @@ export PATH=".:$PATH"
 export PATH="$PATH:~/scripts"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_152)
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0_152)
 export PATH="$PATH:$HOME/.yarn/bin"
 
 
@@ -106,6 +110,10 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOBIN/bin
+
+# brew python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 
 
 alias ..='cd ..'
