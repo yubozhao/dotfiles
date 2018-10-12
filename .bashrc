@@ -2,12 +2,21 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
-. ~/bash_completion.d/git-prompt.sh
-. ~/bash_completion.d/git-completion.bash
+source  ~/bash_completion.d/git-prompt.sh
+
+if [ -f ~/bash_completion.d/git-completion.bash ]; then
+  . ~/bash_completion.d/git-completion.bash
+fi
 
 if [ -f ~/bash_completion.d/hub-completion.bash ]; then
   . ~/bash_completion.d/hub-completion.bash
 fi
+if [ -f /usr/local/etc/bash_completion.d ]; then
+  . /usr/local/etc/bash_completion.d
+fi
+
+[ -f ~/dotfiles/fubectl/fubectl.source ] && source ~/dotfiles/fubectl/fubectl.source
+
 
 DULL=0
 BRIGHT=1
@@ -113,6 +122,11 @@ export PATH=$PATH:$GOBIN/bin
 
 # brew python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# brew anaconda
+export PATH=/usr/local/anaconda3/bin:"$PATH"
+
+# link node 8
+export PATH="/usr/local/opt/node@8/bin:$PATH"
 
 
 
@@ -145,3 +159,25 @@ alias nl="npm list --depth=0 2>/dev/null"
 # fi
 # export POWERLINE_CONFIG_COMMAND="/usr/local/bin/powerline-config"
 # export POWERLINE_COMMAND=powerline
+
+# brew install kube-ps1
+# source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+# PS1="[$(kube_ps1)]$ "
+# PS1="[\u@\h \W \$(kube_ps1)]\$ "
+
+## homebrew completions
+## k8s related bash completions
+if [ -f /usr/local/etc/bash_completion.d/kops.bash ]; then
+  . /user/local/etc/bash_completion.d/kops.bash
+fi
+if [ -f /usr/local/etc/bash_completion.d/kubectl.bash ]; then
+  . /user/local/etc/bash_completion.d/kubectl.bash
+fi
+if [ -f /usr/local/etc/bash_completion.d/kubectx.bash ]; then
+  . /user/local/etc/bash_completion.d/kubectx.bash
+fi
+if [ -f /usr/local/etc/bash_completion.d/kubens.bash ]; then
+  . /user/local/etc/bash_completion.d/kubens.bash
+fi
+. "/Users/bozhaoyu/.acme.sh/acme.sh.env"
+. "/Users/bozhaoyu/src/myacme/acme.sh.env"
